@@ -54,7 +54,7 @@ html {
   line-height: 1.4;
 }
 
-.grid-wrapper {
+#container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.6fr 0.8fr 0.8fr 0.8fr 0.6fr 0.6fr;
@@ -245,7 +245,7 @@ input {
 
 @media (max-width: 500px) {
 
-  .grid-wrapper {
+  #container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 0.8fr 0.8fr 0.8fr 0.8fr 0.7fr;
