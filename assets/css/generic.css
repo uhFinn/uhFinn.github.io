@@ -47,6 +47,16 @@
 
 
 
+h3 {
+  width: 100%;
+  font-size: 80%;
+
+  position: fixed;
+
+  text-align: center;
+  font-family: OS-Light;
+}
+
 
 html {
   color: #222;
@@ -199,6 +209,7 @@ footer {
   border: 1px solid black;
   margin: 10px;
   padding: 10px;
+  display: inline-block;
 
   & h1 {
     width: 100%;
@@ -206,7 +217,6 @@ footer {
 
     text-align: center;
     font-family: OS-Bold;
-
   }
   & h2 {
     width: 100%;
