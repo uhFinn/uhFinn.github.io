@@ -2,7 +2,6 @@
 <html lang="en-US">
 
   <head>
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/generic.css">
 
@@ -12,33 +11,52 @@
     <meta name="theme-color" content="#fafafa">
     <meta charset="utf-8" />
 
-    <title>My test page</title>
+    <title>Search People</title>
+    <meta charset="utf-8">
+    <meta lang="en-US">
+    <meta title="Search People">
   </head>
 
   <body>
 
     <div class="grid-wrapper">
-      <div class="header">
+      <header>
         <h1 id="title">People Search</h1>
-        <header>
-          <ul id="navbar">
-            <li class="pad"><a href="#">People Search</a></li>
-            <li class="pad"><a href="VehicleSearch.html">Vehicle Search</a></li>
-            <li><a href="VehicleAdd.html">Add a vehicle</a></li>
-          </ul>
-        </header>
-      </div>
+        <ul>
+          <li class="pad"><a href="#">People Search</a></li>
+          <li class="pad"><a href="vehicle-search.html">Vehicle Search</a></li>
+          <li><a href="vehicle-add.html">Add a vehicle</a></li>
+        </ul>
+      </header>
 
-      <div class="sbar">
-        sb
-      </div>
-      <div class="main">
-        m
-      </div>
+      <aside>
+        <img src="assets/img/GPKayak.webp">
+      </aside>
 
-      <div class="footer">
-        f
-      </div>
+      <main>
+        <div class="lookup">
+          <div class="formLeft">
+            <form>
+              <label for="name">Search by Driver Name:</label>
+              <br><input type="text" id="name" name="name">
+              <br>
+              <label for="license">Search by Driving License Number:</label>
+              <br><input type="text" id="license" name="license">
+              <br>
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+          <div class="messageRight">
+            <p id="message"></p>
+          </div>
+        </div>
+        <div id="results"></div>
+      </main>
+
+      <footer>
+        <h1><em>Cogito Ergo Sum</em></h1>
+        <h2><em>- Someone Latin</em></h2>
+      </footer>
     </div>
 
 
