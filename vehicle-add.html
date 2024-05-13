@@ -2,11 +2,8 @@
 <html lang="en-US">
 
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/generic.css">
-
-    <link rel="icon" href="assets/img/web/favicon.ico" sizes="any">
-    <link rel="icon" href="assets/img/web/icon.svg" type="image/svg+xml">
+    <script src="assets/js/vAdd.js" type="module" defer></script>
 
     <meta name="theme-color" content="#fafafa">
     <meta charset="utf-8" />
@@ -18,32 +15,79 @@
   </head>
 
   <body>
-
     <div class="grid-wrapper">
-      <div class="header">
-        <h1 id="title">People Search</h1>
-        <header>
-          <ul id="navbar">
-            <li class="pad"><a href="">People Search</li>
-            <li class="pad">Vehicle Search</li>
-            <li>Add a vehicle</li>
-          </ul>
-        </header>
-      </div>
+      <header>
+        <h1 id="title">Add a Vehicle</h1>
+        <ul>
+          <li class="pad"><a href="index.html">People search</a></li>
+          <li class="pad"><a href="vehicle-search.html">Vehicle search</a></li>
+          <li><a href="#">Add a vehicle</a></li>
+        </ul>
+      </header>
 
-      <div class="sbar">
-        sb
-      </div>
-      <div class="main">
-        m
-      </div>
+      <aside>
+        <img id="pageImage" src="assets/img/cappybara.png">
+      </aside>
 
-      <div class="footer">
-        f
-      </div>
+      <main>
+        <div class="add">
+          <div class="vehicle">
+            <h2>Add a Vehicle to the Database!<br> </h2>
+            <form id="vehicleForm">
+              <label for="rego">Vehicle Registration:</label>
+              <br><input type="text" id="rego" name="rego">
+              <br>
+              <label for="make">Vehicle Make:</label>
+              <br><input type="text" id="make" name="make">
+              <br>
+              <label for="model">Vehicle Model:</label>
+              <br><input type="text" id="model" name="model">
+              <br>
+              <label for="colour">Vehicle Colour:</label>
+              <br><input type="text" id="colour" name="colour">
+              <br>
+              <label for="owner">Vehicle Owner:</label>
+              <br><input type="text" id="owner" name="owner">
+              <br>
+              <label for="Add">Add</label>
+              <br><input type="submit" id="Add" value="Add">
+            </form>
+          </div>
+          <div id="personDiv">
+            <h2>Oops... No person exists for that ID.<br>Create one!</h2>
+            <form id="ownerForm">
+              <label for="personid">Owner ID:</label>
+              <br><input type="text" id="personid" name="personid">
+              <br>
+              <label for="name">Owner Name:</label>
+              <br><input type="text" id="name" name="name">
+              <br>
+              <label for="address">Owner Address:</label>
+              <br><input type="text" id="address" name="address">
+              <br>
+              <label for="dob">Owner Date of Birth:</label>
+              <br><input type="text" id="dob" name="dob">
+              <br>
+              <label for="license">Owner License Number:</label>
+              <br><input type="text" id="license" name="license">
+              <br>
+              <label for="expire">Owner License Expiration Date:</label>
+              <br><input type="text" id="expire" name="expire">
+              <br><label for="Addowner">Add owner</label>
+              <br><input type="submit" id="Addowner" value="Add owner">
+            </form>
+          </div>
+        </div>
+        <div class="outputm">
+          <p id="message"></p>
+        </div>
+      </main>
+
+      <footer>
+        <h1><em>Amor Vincit Omnia.</em></h1>
+        <h2><em>... Except this coursework</em></h2>
+      </footer>
     </div>
-
-
   </body>
 
 </html>

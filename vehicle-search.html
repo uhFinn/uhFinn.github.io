@@ -2,11 +2,8 @@
 <html lang="en-US">
 
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/generic.css">
-
-    <link rel="icon" href="assets/img/web/favicon.ico" sizes="any">
-    <link rel="icon" href="assets/img/web/icon.svg" type="image/svg+xml">
+    <script src="assets/js/vSearch.js" type="module" defer></script>
 
     <meta name="theme-color" content="#fafafa">
     <meta charset="utf-8" />
@@ -18,32 +15,41 @@
   </head>
 
   <body>
-
     <div class="grid-wrapper">
-      <div class="header">
-        <h1 id="title">People Search</h1>
-        <header>
-          <ul id="navbar">
-            <li class="pad"><a href="">People Search</li>
-            <li class="pad">Vehicle Search</li>
-            <li>Add a vehicle</li>
-          </ul>
-        </header>
-      </div>
+      <header>
+        <h1 id="title">Vehicle Search</h1>
+        <ul>
+          <li class="pad"><a href="index.html">People search</a></li>
+          <li class="pad"><a href="vehicle-search.html">Vehicle search</a></li>
+          <li><a href="vehicle-add.html">Add a vehicle</a></li>
+        </ul>
+      </header>
 
-      <div class="sbar">
-        sb
-      </div>
-      <div class="main">
-        m
-      </div>
+      <aside>
+        <img src="assets/img/marmot.png">
+      </aside>
 
-      <div class="footer">
-        f
-      </div>
+      <main>
+        <div class="lookup">
+          <div class="formLeft">
+            <form>
+              <label for="rego">Search by Registration Number:</label>
+              <br><input type="text" id="rego" name="rego">
+              <br><input type="submit" value="Submit">
+            </form>
+          </div>
+          <div class="messageRight">
+            <p id="message"></p>
+          </div>
+        </div>
+        <div id="results"></div>
+      </main>
+
+      <footer>
+        <h1><em>Veni, Vidi, Vici.</em></h1>
+        <h2><em>- Finn Scully, 2024</em></h2>
+      </footer>
     </div>
-
-
   </body>
 
 </html>

@@ -57,16 +57,16 @@ html {
 .grid-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1.1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.6fr 0.8fr 0.8fr 0.8fr 0.6fr 0.6fr;
   gap: 0.75vw;
 }
 
 header {
   grid-column: 1 / 5;
   grid-row: 1;
-  border: 2px solid black;
-  margin: 1px;
-  padding: 1px;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
 
   #title {
     width: 100%;
@@ -99,9 +99,11 @@ aside {
   min-width: 0;
   min-height: 0;
 
-  border: 2px solid black;
-  margin: 1px;
-  padding: 1px;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+  display: inline-block;
+
 
   & img {
     width: 100%;
@@ -113,8 +115,8 @@ aside {
 main {
   grid-column: 2 / 5;
   grid-row: 2 / 6;
-  border: 2px solid black;
-  margin: 1px;
+  border: 1px solid black;
+  margin: 10px;
   padding: 10px;
 
   & div {
@@ -129,43 +131,74 @@ main {
 
     .formLeft {
       height: 100%;
-      width: 30%;
+      width: 50%;
     }
     .messageRight {
       height: 100%;
-      width: 70%;
+      width: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
-
-      #message {
-        text-align: center;
-        font-family: OS-Bold;
-        font-size: 100%;
-        margin: 0; /* Remove default margin */
-        padding: 0; /* Remove default padding */
-      }
     }
   }
 
   #results {
-
     height: 70%;
     width: 100%;
 
     position: relative;
 
     border: 2px dashed black;
+    padding: 5px;
     box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0.75vw;
+
+    .result {
+      border: 3px solid black;
+      padding: 2px;
+
+      font-family: OS-Light;
+      font-size: 65%;
+    }
+  }
+
+
+  /* vAdd page */
+  .add {
+    height: 90%;
+    width: 100%;
+    display: flex;
+
+    & div {
+      width: 50%;
+      height: 100%;
+
+      & h2 {
+        font-family: OS-Bold;
+        font-size: 80%;
+      }
+    }
+    #personDiv {
+      display: none;
+    }
+  }
+  .outputm {
+    height: 10%;
+    width: 100%;
+    text-align: center;
   }
 }
 
 footer {
   grid-column: 1 / 5;
   grid-row: 6;
-  border: 2px solid black;
-  margin: 1px;
-  padding: 1px;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
 
   & h1 {
     width: 100%;
@@ -191,10 +224,21 @@ footer {
 
 /* others */
 label {
+  position: relative;
   font-family: OS-SemiBold;
 }
 input {
-  margin-bottom: 5%;
+  margin-bottom: 1.5%;
+}
+
+
+#message {
+  text-align: center;
+  font-family: OS-Bold;
+  font-size: 100%;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  width: 100%;
 }
 
 
@@ -204,7 +248,7 @@ input {
   .grid-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 0.9fr;
+    grid-template-rows: 0.8fr 0.8fr 0.8fr 0.8fr 0.7fr;
     gap: 0.75vw;
   }
 
@@ -212,7 +256,7 @@ input {
     grid-column: 1 / 5;
     grid-row: 1;
 
-    & nav ul {
+    & ul {
       flex-direction: column;
     }
   }
@@ -233,10 +277,22 @@ input {
   }
 
   label {
-    font-size: 1.5vw;
+    font-size: 50%;
   }
 
   input {
     margin-bottom: 1%;
+  }
+
+  main #results {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0.75vw;
+
+    .result {
+      border: 2px solid black;
+      font-size: 50%;
+    }
   }
 }
