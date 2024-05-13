@@ -37,32 +37,28 @@ vehicleForm.addEventListener("submit", async (e) => {
     }
 
     if(invalid.length === 0) {
-        const { data, error } = await supabase
-            .from('Vehicles')
-            .insert([{
-                VehicleID: vehicleData.rego.e.value,
-                Make: vehicleData.make.e.value,
-                Model: vehicleData.model.e.value,
-                Colour: vehicleData.colour.e.value,
-                OwnerID: Number(vehicleData.owner.e.value)
-            },])
-            .select()
+        let { data: People, error } = await supabase
+            .from('People')
+            .select('*')
+            .eq('Name', vehicleData.owner.e.value);
 
-        if(!error) {
-            // Checking if owner exists
-            let { data: People, error } = await supabase
-                .from('People')
-                .select('*')
-                .eq('PersonID', Number(vehicleData.owner.e.value))
-
-            if(People.length === 0) {
-                personDIV.style.display = "inline-block";
-                pageImage.src = "./assets/img/owl.png";
-            }
+        if(People.length !== 0) {
+            const { data, error } = await supabase
+                .from('Vehicles')
+                .insert([{
+                    VehicleID: vehicleData.rego.e.value,
+                    Make: vehicleData.make.e.value,
+                    Model: vehicleData.model.e.value,
+                    Colour: vehicleData.colour.e.value,
+                    OwnerID: People[0].PersonID
+                },])
+                .select()
 
             message.textContent = `Vehicle added successfully`;
         } else {
-            message.innerHTML = "ERROR : An issue occurred whilst attempting to insert vehicle data.<br>Please check your inputs and try again."
+            // Owner doesn't exist, add them:
+            personDIV.style.display = "inline-block";
+            pageImage.src = "./assets/img/owl.png";
         }
 
     } else {
@@ -95,10 +91,23 @@ ownerForm.addEventListener("submit", async (e) => {
             .select()
 
         if(!error) {
-            personDIV.style.display = "none";
-            pageImage.src = "./assets/img/cappybara.png";
+            const { data, error } = await supabase
+                .from('Vehicles')
+                .insert([{
+                    VehicleID: vehicleData.rego.e.value,
+                    Make: vehicleData.make.e.value,
+                    Model: vehicleData.model.e.value,
+                    Colour: vehicleData.colour.e.value,
+                    OwnerID: Number(ownerData.personid.e.value)
+                },])
+                .select()
 
-            message.textContent = `Owner added successfully`;
+            if(!error) {
+                personDIV.style.display = "none";
+                pageImage.src = "./assets/img/cappybara.png";
+
+                message.textContent = `Vehicle added successfully`;
+            }
         } else {
             message.innerHTML = "ERROR : An issue occurred whilst attempting to insert owner data.<br>Please check your inputs and try again."
         }
