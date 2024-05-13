@@ -37,5 +37,6 @@ form.addEventListener("submit", async (e) => {
 
             resultBox.appendChild(newDiv);
         }
-    } else message.textContent = "No Results Found!"
+        message.textContent = "Search successful"
+    } else message.textContent = "No result found"
 });
